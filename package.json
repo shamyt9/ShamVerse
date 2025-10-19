@@ -1,0 +1,24 @@
+{
+    "name": "shamverse",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "deploy": "gh-pages -d ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shamyt9/ShamVerse.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/shamyt9/ShamVerse/issues"
+    },
+    "homepage": "https://github.com/shamyt9/ShamVerse#readme",
+    "devDependencies": {
+        "gh-pages": "^6.3.0"
+    }
+}
