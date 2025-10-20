@@ -1777,7 +1777,7 @@
           <div class="project-tags">
             ${project.techStack
                 .map((tag) => `<span class="project-tag">${tag}</span>`)
-                .join('')}
+                .join(', ')}
           </div>
           <p>${project.description}</p>
           <a href="${project.link}" class="project-link" target="_blank">
