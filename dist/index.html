@@ -639,9 +639,21 @@
 
             .skills-list {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+                grid-template-columns: repeat(3, 1fr);
                 gap: clamp(16px, 3vw, 20px);
             }
+            @media (max-width: 992px) {
+                .skills-list {
+                    grid-template-columns: repeat(2, 1fr);
+                  }
+            }
+
+           @media (max-width: 600px) {
+             .skills-list {
+                 grid-template-columns: 1fr;
+                }
+             }
 
             .skill-item {
                 background-color: var(--bg);
