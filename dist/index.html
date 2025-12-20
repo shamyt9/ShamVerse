@@ -3,7 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sham Portfolio | Web & App Developer</title>
+        <title>ShamVerse Portfolio | Web & App Developer</title>
+        <meta
+            name="description"
+            content="Explore Shamshad Ali's Java and Android projects. View live apps, source code, and skills in this free portfolio."
+        />
+        <link rel="icon" type="image/png" href="./images/portfolio.jpg" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -12,7 +17,6 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
         />
-
         <style>
             :root {
                 --primary: #6c5ce7;
@@ -101,31 +105,6 @@
                 font-weight: 700;
                 color: var(--primary);
                 text-decoration: none;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                transition: var(--transition);
-            }
-
-            .logo:hover {
-                transform: translateY(-2px);
-            }
-
-            .logo-icon {
-                width: 44px;
-                height: 44px;
-                background: linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--secondary)
-                );
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 1.2rem;
-                transition: var(--transition);
             }
 
             .logo span {
@@ -139,7 +118,6 @@
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
             }
-
             .nav-links {
                 display: flex;
                 gap: clamp(20px, 3vw, 32px);
@@ -602,8 +580,8 @@
 
             .about-content {
                 display: flex;
-                align-items: flex-start;
-                gap: clamp(30px, 5vw, 60px);
+                align-items: center;
+                gap: 50px;
             }
 
             .about-text {
@@ -639,8 +617,8 @@
 
             .skills-list {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: clamp(16px, 3vw, 20px);
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .skill-item {
@@ -1969,12 +1947,32 @@
                 color: var(--text);
             }
         </style>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-K6E1GH1NB5"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-K6E1GH1NB5');
+        </script>
     </head>
     <body>
         <!-- Header -->
         <header>
             <div class="container header-container">
-                <a href="#" class="logo">Sham<span>Port</span></a>
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <span>ShamVerse</span>
+                </a>
+
                 <nav>
                     <ul class="nav-links">
                         <li><a href="#home">Home</a></li>
@@ -2082,44 +2080,111 @@
                         <br /><br />
                         <div class="skills-list">
                             <div class="skill-item">
-                                <i class="fab fa-html5"></i>
-                                <h4>HTML5 & CSS3</h4>
+                                <i class="fab fa-java"></i>
+                                <h4>Java & OOP</h4>
                                 <p>
-                                    Semantic markup, responsive design, CSS
-                                    animations, Flexbox, Grid
+                                    Core Java, OOP concepts, DSA, Android
+                                    development
                                 </p>
                             </div>
+
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <h4>Python & ML</h4>
+                                <p>
+                                    Flask API integration, NumPy, Pandas,
+                                    Scikit-learn, Matplotlib
+                                </p>
+                            </div>
+
+                            <div class="skill-item">
+                                <i class="fab fa-cuttlefish"></i>
+                                <h4>C & C++</h4>
+                                <p>
+                                    Procedural and Object-Oriented Programming,
+                                    DSA fundamentals
+                                </p>
+                            </div>
+
                             <div class="skill-item">
                                 <i class="fab fa-js"></i>
                                 <h4>JavaScript</h4>
                                 <p>
-                                    ES6+, React, Vue, jQuery, AJAX, API
-                                    integration
+                                    ES6+, React.js, jQuery, API integration,
+                                    JSON handling
                                 </p>
                             </div>
+
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <h4>HTML5 & CSS3</h4>
+                                <p>
+                                    Semantic markup, Responsive Design,
+                                    Bootstrap, Material Design
+                                </p>
+                            </div>
+
+                            <div class="skill-item">
+                                <i class="fab fa-php"></i>
+                                <h4>PHP & MySQL</h4>
+                                <p>
+                                    Backend scripting, PHPMyAdmin, CRUD
+                                    operations, XAMPP
+                                </p>
+                            </div>
+
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <h4>Firebase & Databases</h4>
+                                <p>
+                                    Firestore, Authentication, Realtime
+                                    Database, SQLite, MySQL
+                                </p>
+                            </div>
+
+                            <div class="skill-item">
+                                <i class="fab fa-android"></i>
+                                <h4>Android Development</h4>
+                                <p>
+                                    Android Studio, XML Layout Design,
+                                    RecyclerView, SharedPreferences
+                                </p>
+                            </div>
+
                             <div class="skill-item">
                                 <i class="fab fa-wordpress"></i>
                                 <h4>WordPress</h4>
                                 <p>
-                                    Theme development, plugin customization,
-                                    WooCommerce
+                                    Theme customization, Plugin integration, SEO
+                                    optimization
                                 </p>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-android"></i>
-                                <h4>Android (Java)</h4>
-                                <p>Native mobile app development using Java</p>
                             </div>
 
                             <div class="skill-item">
-                                <i class="fas fa-server"></i>
-                                <h4>Backend</h4>
-                                <p>Firebase, PHP, MySQL</p>
+                                <i class="fas fa-code-branch"></i>
+                                <h4>Tools & Deployment</h4>
+                                <p>
+                                    GitHub, VS Code, Netlify, GitHub Pages, API
+                                    integration
+                                </p>
                             </div>
+
                             <div class="skill-item">
-                                <i class="fas fa-tools"></i>
-                                <h4>Tools</h4>
-                                <p>Git, AWS, Figma</p>
+                                <i class="fas fa-paint-brush"></i>
+                                <h4>UI/UX & Design</h4>
+                                <p>
+                                    Canva, Responsive layouts, Material Design,
+                                    Modern web aesthetics
+                                </p>
+                            </div>
+
+                            <div class="skill-item">
+                                <i class="fas fa-brain"></i>
+                                <h4>Other Technical Skills</h4>
+                                <p>
+                                    DSA, Flask API integration, JSON, SEO basics
+                                    for websites
+                                </p>
                             </div>
                         </div>
                     </div>
