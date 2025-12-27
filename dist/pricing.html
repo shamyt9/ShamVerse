@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Coaching Center Website Plans | Professional Pricing</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                background-color: #f8fafc;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            /* Header Styles */
+            header {
+                text-align: center;
+                padding: 40px 0 20px;
+            }
+
+            header h1 {
+                font-size: 2.8rem;
+                color: #1e293b;
+                margin-bottom: 10px;
+                background: linear-gradient(90deg, #2563eb, #7c3aed);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            header p {
+                font-size: 1.1rem;
+                color: #64748b;
+                max-width: 600px;
+                margin: 0 auto 30px;
+            }
+
+            /* Toggle Switch */
+            .toggle-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 40px;
+                gap: 15px;
+            }
+
+            .toggle-label {
+                font-weight: 500;
+                color: #64748b;
+            }
+
+            .toggle-label.active {
+                color: #2563eb;
+                font-weight: 600;
+            }
+
+            .toggle-switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 30px;
+            }
+
+            .toggle-switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .toggle-slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #cbd5e1;
+                transition: 0.4s;
+                border-radius: 34px;
+            }
+
+            .toggle-slider:before {
+                position: absolute;
+                content: '';
+                height: 22px;
+                width: 22px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                transition: 0.4s;
+                border-radius: 50%;
+            }
+
+            input:checked + .toggle-slider {
+                background-color: #2563eb;
+            }
+
+            input:checked + .toggle-slider:before {
+                transform: translateX(30px);
+            }
+
+            /* Pricing Cards */
+            .pricing-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+
+            .pricing-card {
+                background: white;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                transition: all 0.3s ease;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .pricing-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            }
+
+            .card-header {
+                padding: 30px 25px 20px;
+                color: white;
+                position: relative;
+            }
+
+            .plan-1 .card-header {
+                background: linear-gradient(135deg, #10b981, #059669);
+            }
+
+            .plan-2 .card-header {
+                background: linear-gradient(135deg, #f59e0b, #d97706);
+            }
+
+            .plan-3 .card-header {
+                background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            }
+
+            .popular-tag {
+                position: absolute;
+                top: 15px;
+                right: -30px;
+                background: #fbbf24;
+                color: #78350f;
+                padding: 5px 35px;
+                transform: rotate(45deg);
+                font-weight: 600;
+                font-size: 0.8rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .plan-name {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 5px;
+            }
+
+            .plan-subtitle {
+                font-size: 0.95rem;
+                opacity: 0.9;
+                margin-bottom: 15px;
+            }
+
+            .price {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 5px;
+            }
+
+            .price-period {
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+
+            .maintenance-badge {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.2);
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                margin-top: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .card-content {
+                padding: 25px;
+                flex-grow: 1;
+            }
+
+            .features-list {
+                list-style: none;
+                margin-bottom: 30px;
+            }
+
+            .features-list li {
+                padding: 8px 0;
+                border-bottom: 1px solid #f1f5f9;
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .features-list li:last-child {
+                border-bottom: none;
+            }
+
+            .feature-icon {
+                margin-right: 10px;
+                color: #10b981;
+                font-size: 1.1rem;
+                margin-top: 3px;
+            }
+
+            .info-note {
+                background-color: #fef3c7;
+                padding: 10px 15px;
+                border-radius: 8px;
+                margin: 15px 0;
+                border-left: 4px solid #f59e0b;
+                font-size: 0.9rem;
+                color: #92400e;
+            }
+
+            .info-note i {
+                color: #d97706;
+                margin-right: 8px;
+            }
+
+            .best-for {
+                background-color: #f8fafc;
+                padding: 15px;
+                border-radius: 10px;
+                margin-top: 20px;
+                border-left: 4px solid #2563eb;
+            }
+
+            .best-for h4 {
+                color: #1e293b;
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+
+            .best-for p {
+                color: #64748b;
+                font-size: 0.9rem;
+            }
+
+            .card-footer {
+                padding: 0 25px 30px;
+                text-align: center;
+            }
+
+            .select-plan-btn {
+                display: inline-block;
+                width: 100%;
+                padding: 14px 20px;
+                font-weight: 600;
+                font-size: 1rem;
+                text-align: center;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .plan-1 .select-plan-btn {
+                background: #10b981;
+                color: white;
+            }
+
+            .plan-1 .select-plan-btn:hover {
+                background: #059669;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+            }
+
+            .plan-2 .select-plan-btn {
+                background: #f59e0b;
+                color: white;
+            }
+
+            .plan-2 .select-plan-btn:hover {
+                background: #d97706;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+            }
+
+            .plan-3 .select-plan-btn {
+                background: #3b82f6;
+                color: white;
+            }
+
+            .plan-3 .select-plan-btn:hover {
+                background: #1d4ed8;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            }
+
+            /* FAQ Section */
+            .faq-section {
+                background: white;
+                border-radius: 16px;
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                margin-bottom: 60px;
+            }
+
+            .faq-section h2 {
+                text-align: center;
+                margin-bottom: 30px;
+                color: #1e293b;
+                font-size: 2rem;
+            }
+
+            .faq-item {
+                border-bottom: 1px solid #e2e8f0;
+                padding: 20px 0;
+            }
+
+            .faq-question {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                font-weight: 600;
+                color: #1e293b;
+            }
+
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                color: #64748b;
+                padding-top: 0;
+            }
+
+            .faq-answer.active {
+                max-height: 200px;
+                padding-top: 15px;
+            }
+
+            .faq-toggle {
+                transition: transform 0.3s ease;
+            }
+
+            .faq-toggle.active {
+                transform: rotate(180deg);
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 30px 0;
+                color: #64748b;
+                border-top: 1px solid #e2e8f0;
+                margin-top: 30px;
+            }
+
+            /* Contact Modal */
+            .modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 1000;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .modal-content {
+                background: white;
+                padding: 40px;
+                border-radius: 16px;
+                max-width: 500px;
+                width: 90%;
+                text-align: center;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                animation: modalFadeIn 0.3s ease;
+            }
+
+            @keyframes modalFadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .modal h3 {
+                color: #1e293b;
+                margin-bottom: 20px;
+                font-size: 1.8rem;
+            }
+
+            .modal p {
+                color: #64748b;
+                margin-bottom: 30px;
+            }
+
+            .modal-buttons {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-top: 25px;
+            }
+
+            .modal-btn {
+                padding: 12px 25px;
+                border-radius: 8px;
+                font-weight: 600;
+                cursor: pointer;
+                border: none;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .modal-btn-whatsapp {
+                background: #25d366;
+                color: white;
+            }
+
+            .modal-btn-whatsapp:hover {
+                background: #128c7e;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            }
+
+            .modal-btn-close {
+                background: #e2e8f0;
+                color: #64748b;
+            }
+
+            .modal-btn-close:hover {
+                background: #cbd5e1;
+            }
+
+            .modal-btn i {
+                margin-right: 8px;
+            }
+
+            /* Responsive */
+            @media (max-width: 992px) {
+                .pricing-container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .pricing-container {
+                    grid-template-columns: 1fr;
+                }
+
+                header h1 {
+                    font-size: 2.2rem;
+                }
+
+                .faq-section {
+                    padding: 25px;
+                }
+
+                .modal-content {
+                    padding: 30px 20px;
+                }
+
+                .modal-buttons {
+                    flex-direction: column;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .container {
+                    padding: 15px;
+                }
+
+                header {
+                    padding: 20px 0 15px;
+                }
+
+                .popular-tag {
+                    font-size: 0.7rem;
+                    right: -35px;
+                }
+
+                .price {
+                    font-size: 2rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Coaching Center Website Plans</h1>
+                <p>
+                    Choose the perfect plan for your coaching institute. All
+                    plans include one-time payment with lifetime access to your
+                    website.
+                </p>
+            </header>
+
+            <div class="toggle-container">
+                <span class="toggle-label active" id="one-time-label"
+                    >One Time Payment</span
+                >
+                <label class="toggle-switch">
+                    <input type="checkbox" id="paymentToggle" />
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" id="monthly-label"
+                    >Monthly (Coming Soon)</span
+                >
+            </div>
+
+            <div class="pricing-container">
+                <!-- Plan 1 -->
+                <div class="pricing-card plan-1">
+                    <div class="card-header">
+                        <div class="plan-name">BASIC DIGITAL PRESENCE</div>
+                        <div class="plan-subtitle">
+                            Small / New Coaching Centers ke liye
+                        </div>
+                        <div class="price" id="plan1-price">₹4,999</div>
+                        <div class="price-period">One Time Payment</div>
+                        <div class="maintenance-badge">
+                            🎁 6 Months Free Maintenance
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <ul class="features-list">
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <strong>4 Pages Static Website</strong> (Home,
+                                Courses, About, Contact)
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Mobile Responsive Design
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Clean & Professional UI
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Basic Animations
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Free Hosting (GitHub Pages)
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                WhatsApp Chat Button
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Click-to-Call Integration
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Google Map Location Embed
+                            </li>
+                        </ul>
+
+                        <div class="info-note">
+                            <i class="fas fa-info-circle"></i> No domain or
+                            hosting charges with GitHub Pages hosting
+                        </div>
+
+                        <div class="best-for">
+                            <h4>👉 Best for:</h4>
+                            <p>"Bas online presence aur inquiry chahiye"</p>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button
+                            class="select-plan-btn"
+                            data-plan="BASIC DIGITAL PRESENCE"
+                            data-price="4999"
+                            data-maintenance="6 months"
+                        >
+                            Select This Plan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan 2 -->
+                <div class="pricing-card plan-2">
+                    <div class="popular-tag">MOST POPULAR</div>
+                    <div class="card-header">
+                        <div class="plan-name">
+                            PROFESSIONAL BUSINESS WEBSITE
+                        </div>
+                        <div class="plan-subtitle">
+                            ⭐ (MOST POPULAR) For Established Institutes
+                        </div>
+                        <div class="price" id="plan2-price">₹7,999</div>
+                        <div class="price-period">One Time Payment</div>
+                        <div class="maintenance-badge">
+                            🎁 10 Months Free Maintenance
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <ul class="features-list">
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <strong>Everything in BASIC +</strong>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <strong>6–7 Pages Website</strong> (Home,
+                                Courses, Faculty, Results, About, Contact)
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Better UI/UX Design
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Smooth Scroll Animations
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                SEO-friendly Structure
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Advanced WhatsApp Integration
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Course-wise WhatsApp Inquiry
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Business Content Support
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Google Map Integration
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Location & Area Visibility
+                            </li>
+                        </ul>
+
+                        <div class="info-note">
+                            <i class="fas fa-info-circle"></i> + Domain and
+                            hosting charges (depends on platform - ₹500 to
+                            ₹2000/year)
+                        </div>
+
+                        <div class="best-for">
+                            <h4>👉 Best for:</h4>
+                            <p>
+                                "Admissions inquiry aur trust dono badhana hai"
+                            </p>
+                            <p
+                                style="
+                                    margin-top: 8px;
+                                    font-weight: 600;
+                                    color: #d97706;
+                                "
+                            >
+                                ⭐ 80% coaching institutes isi plan ko choose
+                                karte hain
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button
+                            class="select-plan-btn"
+                            data-plan="PROFESSIONAL BUSINESS WEBSITE"
+                            data-price="7999"
+                            data-maintenance="10 months"
+                        >
+                            Select This Plan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="pricing-card plan-3">
+                    <div class="card-header">
+                        <div class="plan-name">ADVANCED DIGITAL SYSTEM</div>
+                        <div class="plan-subtitle">
+                            Growing / Established Institutes ke liye
+                        </div>
+                        <div class="price" id="plan3-price">₹15,000</div>
+                        <div class="price-period">One Time Payment</div>
+                        <div class="maintenance-badge">
+                            🎁 1 Year Free Maintenance
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <ul class="features-list">
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <strong>Everything in PROFESSIONAL +</strong>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <strong>Admin Panel (Future-Ready)</strong> -
+                                Secure Admin Login
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Online Inquiry / Admission Form
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Batch Management (Timing, Seats)
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Schedule / Timetable Management
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Notice & Notification Control
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Academic Management System
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Test Series Information
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Marks / Performance Upload (Basic)
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Mobile App Ready (Optional)
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Android App Planning & UI
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                Website → App Integration
+                            </li>
+                        </ul>
+
+                        <div class="info-note">
+                            <i class="fas fa-info-circle"></i> + Domain and
+                            hosting charges (depends on platform - ₹500 to
+                            ₹2000/year)
+                        </div>
+
+                        <div class="best-for">
+                            <h4>👉 Best for:</h4>
+                            <p>"Complete coaching management + scalability"</p>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button
+                            class="select-plan-btn"
+                            data-plan="ADVANCED DIGITAL SYSTEM"
+                            data-price="15000"
+                            data-maintenance="1 year"
+                        >
+                            Select This Plan
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(0)">
+                        <span>What is included in "One Time Payment"?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            One time payment means you pay once and get lifetime
+                            access to your website. This includes all the
+                            features mentioned in your selected plan, with no
+                            recurring monthly or yearly fees. You'll own the
+                            website code and can host it on our recommended free
+                            hosting (GitHub Pages) or any hosting of your
+                            choice.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(1)">
+                        <span>What does "Free Maintenance" include?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Free maintenance includes bug fixes, security
+                            updates, and minor content changes (up to 2 pages
+                            per month). Basic plan gets 6 months, Professional
+                            gets 10 months, and Advanced gets 1 year of free
+                            maintenance. After the free period, you can opt for
+                            our affordable maintenance plans.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(2)">
+                        <span>What are domain and hosting charges?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Domain (your website name like www.yourcoaching.com)
+                            typically costs ₹500-₹800/year. Hosting (where your
+                            website files are stored) costs ₹1000-₹2000/year for
+                            reliable service. Basic plan uses free GitHub Pages
+                            hosting, while Professional and Advanced plans need
+                            paid hosting for full functionality.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(3)">
+                        <span>How do I contact after selecting a plan?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            When you click "Select This Plan", you'll get an
+                            option to contact us directly on WhatsApp. You'll be
+                            connected with our sales team who will guide you
+                            through the process, answer your questions, and help
+                            you get started with your website.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>© 2025 Coaching Center Websites. All rights reserved.</p>
+                <p>Contact us: shamtechsolution@gmail.com | +91 80042 30656</p>
+            </footer>
+        </div>
+
+        <!-- Contact Modal -->
+        <div class="modal" id="contactModal">
+            <div class="modal-content">
+                <h3>Contact Us for <span id="selectedPlanName"></span></h3>
+                <p>
+                    You've selected the
+                    <strong id="displayPlanName"></strong> plan.
+                </p>
+                <p>Price: <strong id="displayPlanPrice"></strong> (One Time)</p>
+                <p>
+                    Free Maintenance:
+                    <strong id="displayPlanMaintenance"></strong>
+                </p>
+                <p>
+                    Click below to connect with us on WhatsApp for more details
+                    and to proceed with your order.
+                </p>
+
+                <div class="modal-buttons">
+                    <a
+                        href="#"
+                        id="whatsappLink"
+                        class="modal-btn modal-btn-whatsapp"
+                        target="_blank"
+                    >
+                        <i class="fab fa-whatsapp"></i> Contact on WhatsApp
+                    </a>
+                    <button class="modal-btn modal-btn-close" id="closeModal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Payment Toggle Functionality
+            const paymentToggle = document.getElementById('paymentToggle');
+            const oneTimeLabel = document.getElementById('one-time-label');
+            const monthlyLabel = document.getElementById('monthly-label');
+
+            paymentToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    oneTimeLabel.classList.remove('active');
+                    monthlyLabel.classList.add('active');
+                    // Show a message that monthly plans are coming soon
+                    alert(
+                        'Monthly payment plans are coming soon! Currently we only offer one-time payment options.'
+                    );
+                    // Reset the toggle
+                    setTimeout(() => {
+                        paymentToggle.checked = false;
+                        oneTimeLabel.classList.add('active');
+                        monthlyLabel.classList.remove('active');
+                    }, 100);
+                }
+            });
+
+            // FAQ Toggle Functionality
+            function toggleFAQ(index) {
+                const faqAnswers = document.querySelectorAll('.faq-answer');
+                const faqToggles = document.querySelectorAll('.faq-toggle');
+
+                // Toggle the clicked FAQ
+                faqAnswers[index].classList.toggle('active');
+                faqToggles[index].classList.toggle('active');
+
+                // Close other FAQs
+                for (let i = 0; i < faqAnswers.length; i++) {
+                    if (i !== index) {
+                        faqAnswers[i].classList.remove('active');
+                        faqToggles[i].classList.remove('active');
+                    }
+                }
+            }
+
+            // Plan Selection and WhatsApp Contact
+            const planButtons = document.querySelectorAll('.select-plan-btn');
+            const contactModal = document.getElementById('contactModal');
+            const selectedPlanName =
+                document.getElementById('selectedPlanName');
+            const displayPlanName = document.getElementById('displayPlanName');
+            const displayPlanPrice =
+                document.getElementById('displayPlanPrice');
+            const displayPlanMaintenance = document.getElementById(
+                'displayPlanMaintenance'
+            );
+            const whatsappLink = document.getElementById('whatsappLink');
+            const closeModal = document.getElementById('closeModal');
+
+            // WhatsApp number
+            const whatsappNumber = '8004230656';
+
+            planButtons.forEach((button) => {
+                button.addEventListener('click', function () {
+                    const planName = this.getAttribute('data-plan');
+                    const planPrice = this.getAttribute('data-price');
+                    const planMaintenance =
+                        this.getAttribute('data-maintenance');
+
+                    // Set modal content
+                    selectedPlanName.textContent = planName;
+                    displayPlanName.textContent = planName;
+                    displayPlanPrice.textContent = `₹${parseInt(
+                        planPrice
+                    ).toLocaleString('en-IN')}`;
+                    displayPlanMaintenance.textContent = planMaintenance;
+
+                    // Create WhatsApp message
+                    const message = `Hello! I'm interested in the *${planName}* plan.\n\nPlan Details:\n- Price: ₹${parseInt(
+                        planPrice
+                    ).toLocaleString(
+                        'en-IN'
+                    )} (One Time)\n- Free Maintenance: ${planMaintenance}\n- Plan Features: ${getPlanFeatures(
+                        planName
+                    )}\n\nPlease provide more details and next steps.`;
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappURL = `https://wa.me/91${whatsappNumber}?text=${encodedMessage}`;
+
+                    // Set WhatsApp link
+                    whatsappLink.href = whatsappURL;
+
+                    // Show modal
+                    contactModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Function to get plan features based on plan name
+            function getPlanFeatures(planName) {
+                if (planName.includes('BASIC')) {
+                    return '4 Pages Website, Mobile Responsive, WhatsApp Chat, Google Map, 6 Months Free Maintenance';
+                } else if (planName.includes('PROFESSIONAL')) {
+                    return '6-7 Pages Website, Advanced UI/UX, SEO-friendly, Advanced WhatsApp Integration, 10 Months Free Maintenance + Domain/Hosting';
+                } else if (planName.includes('ADVANCED')) {
+                    return 'Admin Panel, Online Forms, Batch Management, Academic System, Mobile App Ready, 1 Year Free Maintenance + Domain/Hosting';
+                }
+                return 'Complete website solution for coaching institutes';
+            }
+
+            // Close modal
+            closeModal.addEventListener('click', function () {
+                contactModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function (event) {
+                if (event.target === contactModal) {
+                    contactModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Card Hover Effects Enhancement
+            const pricingCards = document.querySelectorAll('.pricing-card');
+
+            pricingCards.forEach((card) => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.zIndex = '10';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.zIndex = '1';
+                });
+            });
+
+            // Initialize tooltips for info notes
+            document.querySelectorAll('.info-note').forEach((note) => {
+                note.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+
+                note.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        </script>
+    </body>
+</html>
