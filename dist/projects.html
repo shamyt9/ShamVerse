@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
     <head>
         <meta charset="UTF-8" />
@@ -58,8 +58,8 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana,
-                    sans-serif;
+                font-family:
+                    'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
 
             body {
@@ -857,12 +857,14 @@
                 </a>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li>
-                            <a href="projects.html" class="active">Projects</a>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="Achievements.html">Achievements</a></li>
+                        <li id="developerMode">
+                            <a href="ComingSoon.html">Developer Mode</a>
                         </li>
-                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </nav>
                 <button class="theme-toggle" id="themeToggle">
@@ -1262,7 +1264,7 @@
 
                 try {
                     const querySnapshot = await getDocs(
-                        collection(db, 'projects')
+                        collection(db, 'projects'),
                     );
 
                     querySnapshot.forEach((docSnap) => {
@@ -1273,14 +1275,14 @@
                         projectCard.classList.add('project-card', 'fade-in');
                         projectCard.setAttribute(
                             'data-categories',
-                            project.Category.toLowerCase()
+                            project.Category.toLowerCase(),
                         );
 
                         projectCard.innerHTML = `
         <div class="project-media">
           <img class="project-image" src="${project.thumbnail}" alt="${
-                            project.title
-                        }" />
+              project.title
+          }" />
           <div class="project-overlay">
             <a href="${project.link}" class="view-btn" target="_blank">
               <i class="fas fa-eye"></i> View Project
@@ -1298,11 +1300,11 @@
                   .map((tag) => `<span class="project-tag">${tag}</span>`)
                   .join('')
             : typeof project.techStack === 'string'
-            ? project.techStack
-                  .split(',')
-                  .map((t) => `<span class="project-tag">${t.trim()}</span>`)
-                  .join('')
-            : ''
+              ? project.techStack
+                    .split(',')
+                    .map((t) => `<span class="project-tag">${t.trim()}</span>`)
+                    .join('')
+              : ''
     }
 </div>
 
